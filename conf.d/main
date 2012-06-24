@@ -65,6 +65,12 @@ $CURL ${URL}/3 --data "mySqlHost=localhost&mySqlUser=$DB_USER&mySqlPassword=$DB_
 
 rm -f /tmp/cookie
 
+# change site to default
+CONF=$WEBROOT/src/userdata/configs/127.0.0.1.ini
+sed -i "s|fsHost=.*|fsHost=${DOMAIN}/photos|" $CONF
+mv $CONF $(dirname $CONF)/${DOMAIN}.ini
+chmod 640 $WEBROOT/src/userdata/configs/${DOMAIN}.ini
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
