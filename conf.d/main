@@ -25,3 +25,7 @@ chown -R www-data:www-data $WEBROOT/src/userdata
 chown -R www-data:www-data $WEBROOT/src/html/photos
 chown -R www-data:www-data $WEBROOT/src/html/assets/cache
 
+# configure php.ini
+PHPINI=/etc/php5/apache2/php.ini
+sed -i "s|^upload_max_filesize.*|upload_max_filesize = 16M|" $PHPINI
+
