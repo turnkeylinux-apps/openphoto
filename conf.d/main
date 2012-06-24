@@ -1,0 +1,13 @@
+#!/bin/sh -ex
+
+DB_NAME=openphoto
+DB_USER=openphoto
+DB_PASS=$(mcookie)
+
+ADMIN_PASS=turnkey
+ADMIN_MAIL=admin@example.com
+DOMAIN=www.example.com
+
+SRC=/usr/local/src
+WEBROOT=/var/www/openphoto
+
