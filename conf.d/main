@@ -71,6 +71,14 @@ sed -i "s|fsHost=.*|fsHost=${DOMAIN}/photos|" $CONF
 mv $CONF $(dirname $CONF)/${DOMAIN}.ini
 chmod 640 $WEBROOT/src/userdata/configs/${DOMAIN}.ini
 
+# deny access to setup
+cat >>/etc/apache2/sites-available/openphoto<<EOF
+# remove to setup multiple openphoto sites
+<Location /setup>
+    deny from all
+</Location>
+EOF
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
