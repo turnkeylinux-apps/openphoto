@@ -1,0 +1,8 @@
+#!/bin/bash -ex
+
+WEBROOT=/var/www/openphoto
+
+[ "$FAB_HTTP_PROXY" ] && export HTTP_PROXY=$FAB_HTTP_PROXY
+git clone https://github.com/photo/frontend.git $WEBROOT
+unset HTTP_PROXY
+

@@ -8,19 +8,14 @@ ADMIN_PASS=turnkey
 ADMIN_MAIL=admin@example.com
 DOMAIN=www.example.com
 
-SRC=/usr/local/src
 WEBROOT=/var/www/openphoto
 
-# unpack and create required folders/permissions
-tar -zxf $SRC/openphoto-*.tar.gz -C $(dirname $WEBROOT)
-mv $(dirname $WEBROOT)/openphoto-* $WEBROOT
-rm $SRC/openphoto-*.tar.gz
-chown -R root:root $WEBROOT
-
+# create required folders and set permissions
 mkdir -p $WEBROOT/src/userdata/configs
 mkdir -p $WEBROOT/src/html/photos
 mkdir -p $WEBROOT/src/html/assets/cache
 
+chown -R root:root $WEBROOT
 chown -R www-data:www-data $WEBROOT/src/userdata
 chown -R www-data:www-data $WEBROOT/src/html/photos
 chown -R www-data:www-data $WEBROOT/src/html/assets/cache
