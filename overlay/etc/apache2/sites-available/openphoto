@@ -14,7 +14,12 @@ NameVirtualHost *:443
     DocumentRoot /var/www/openphoto/src/html/
 </VirtualHost>
 
-<Directory /var/www/openphoto/>
+<Directory /var/www/openphoto/src/html/>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)\?*$ index.php?__route__=/$1 [L,QSA]
+
     Options +FollowSymLinks
     AllowOverride All
     order allow,deny
