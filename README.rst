@@ -24,7 +24,7 @@ Credentials *(passwords set at first boot)*
 -------------------------------------------
 
 -  Webmin, SSH, MySQL, phpMyAdmin: username **root**
--  OpenPhoto: default username **admin@example.com**
+-  OpenPhoto: default username is email set at first boot
 
 
 .. _OpenPhoto: http://theopenphotoproject.org/
