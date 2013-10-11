@@ -1,12 +1,21 @@
 turnkey-openphoto-13.0 (1) turnkey; urgency=low
 
-  * Please refer to turnkey-core's changelog for changes common to all
-    appliances, as well as the following git logs:
-    
-    - https://github.com/turnkeylinux/common
-    - https://github.com/turnkeylinux-apps/openphoto
+  * OpenPhoto:
 
- -- Alon Swartz <alon@turnkeylinux.org>  Tue, 06 Aug 2013 15:37:33 +0300
+    - Latest upstream version of OpenPhoto.
+    - Updated OpenPhoto apache site config and documentroot path.
+    - Added rewrite rules required in latest version.
+    - Mysql password is now encrypted with secret [#121].
+
+  * PHPMyAdmin:
+
+    - Configured to allow users preferences stored in database.
+    - Specified blowfish_secret and regeneration on firstboot (security).
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Fri, 11 Oct 2013 10:33:36 +0300
 
 turnkey-openphoto-12.1 (1) turnkey; urgency=low
 
